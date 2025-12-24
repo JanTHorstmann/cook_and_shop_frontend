@@ -9,24 +9,30 @@
             <input class="email_password_input" type="email" id="email" name="email" placeholder="Enter your Email"
                 required formControlName="email">
 
-            @if (email.invalid && (email.touched || email.dirty)) {
             <label class="incorrect_entry" for="email">
+                @if (email.invalid && (email.touched || email.dirty)) {
                 @if (email.errors?.['required']) { Email is required }
                 @if (email.errors?.['email']) { Invalid email format }
+                }
             </label>
-            }
 
             <label for="password">Password:</label>
 
             <input class="email_password_input" type="password" id="password" name="password"
                 placeholder="Enter your Password" required formControlName="password">
 
-            @if (password.invalid && (password.touched || password.dirty)) {
             <label class="incorrect_entry" for="email">
+                @if (password.invalid && (password.touched || password.dirty)) {
                 @if (password.errors?.['required']) { Password is required }
                 @if (password.errors?.['minlength']) { Minimum 6 characters }
+                }
             </label>
-            }
+
+            <p class="error_server">
+                @if (serverError) {
+                {{ serverError }}
+                }
+            </p>
 
             @if (isLogin) {
             <div class="remember_or_forgot">
@@ -39,10 +45,20 @@
             }
 
             <div class="wrap">
-                <button type="submit">
+                @if (email.invalid && (email.touched || email.dirty) || password.invalid && (password.touched ||
+                password.dirty)) {
+                <button class="button_disabled" type="submit" disabled>
                     {{submitButton}}
                 </button>
+                } @else {
+                <button class="button_enabled" type="submit">
+                    {{submitButton}}
+                </button>
+                }
             </div>
+
+
+
         </form>
 
         @if (isLogin) {
@@ -52,6 +68,6 @@
             </a>
         </p>
         }
-        
+
     </div>
 </div>

@@ -1,4 +1,6 @@
 <app-forms 
-[isLogin]="true"
-[submitButton]="'Sign in'"
-></app-forms>
+[isLogin]="true" 
+submitButton="Sign in" 
+[serverError]="serverError" 
+(formSubmit)="signIn($event)">
+</app-forms>

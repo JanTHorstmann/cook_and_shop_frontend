@@ -60,6 +60,7 @@ label {
     background-color: rgb(69, 137, 137);
     color: #ffffff;
 }
+
 input::placeholder {
     color: #ffffff;
     font-size: 16px;
@@ -90,7 +91,11 @@ input::placeholder {
     width: 100%;
 }
 
-
+.wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 button {
     padding: 15px;
     border-radius: 30px;
@@ -99,13 +104,31 @@ button {
     border: none;
     color: white;
     cursor: pointer;
-    background-color: #4CAF50;
-    width: 100%;
+        width: 100%;
     font-size: 24px;
 }
 
-.wrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.button_disabled {
+    background-color: #666666;
+}
+
+.button_disabled:hover {
+    cursor: not-allowed;
+}
+
+.button_enabled {
+    background-color: #4CAF50;
+}
+
+.button_enabled:hover {
+    background-color: rgba(76, 175, 80, 0.8);
+}
+
+
+.error_server {
+    margin: 0 0 10px 0 ;    
+    height: 22px;
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
 }
