@@ -1,14 +1,9 @@
+@use '../../../../mixins.scss' as m;
+
 .content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: sans-serif;
-    line-height: 1.5;
-    min-height: 100vh;
-    background: rgb(112, 184, 184);
+    @include m.d-flex-justify-align();
     flex-direction: column;
-    margin: 0;
-    color: #ffffff;
+    min-height: 100vh;
 }
 
 .main {
@@ -27,9 +22,8 @@ img {
 }
 
 form {
-    display: flex;
+    @include m.d-flex-justify-align($justify: unset, $align: center);
     flex-direction: column;
-    align-items: center;
 }
 
 label {
@@ -58,7 +52,6 @@ label {
     border: 2px solid rgb(112, 184, 184);
     border-radius: 10px;
     background-color: rgb(69, 137, 137);
-    color: #ffffff;
 }
 
 input::placeholder {
@@ -67,9 +60,7 @@ input::placeholder {
 }
 
 .remember_or_forgot {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    @include m.d-flex-justify-align($justify: space-around, $align: center);
     padding: 0 20px;
     width: 100%;
 
@@ -92,10 +83,9 @@ input::placeholder {
 }
 
 .wrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include m.d-flex-justify-align();
 }
+
 button {
     padding: 15px;
     border-radius: 30px;
@@ -104,7 +94,7 @@ button {
     border: none;
     color: white;
     cursor: pointer;
-        width: 100%;
+    width: 100%;
     font-size: 24px;
 }
 
@@ -126,7 +116,7 @@ button {
 
 
 .error_server {
-    margin: 0 0 10px 0 ;    
+    margin: 0 0 10px 0;
     height: 22px;
     font-size: 20px;
     font-weight: bold;

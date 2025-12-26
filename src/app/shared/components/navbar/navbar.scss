@@ -1,0 +1,18 @@
+@use '../../../../mixins.scss' as m;
+
+header {
+    @include m.d-flex-justify-align($justify: space-between);
+    padding: 20px;
+    background-color: rgb(64, 128, 128);
+
+    h1 {
+        font-size: 32px;
+        margin: 0;
+    }
+
+    img {
+        width: 64px;
+        border-radius: 100%;
+        cursor: pointer;
+    }
+}
