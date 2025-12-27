@@ -1,5 +1,12 @@
 <app-navbar></app-navbar>
 <div class="content">
-    <app-recipe-overview></app-recipe-overview>
+    @if (loading) {
+        <div>Loading...</div>
+    } @else if (error) {
+        <div>{{ error }}</div>
+    } @else {
+        @for (recipeItem of recipeOverviewData; track $index) {
+            <app-recipe-overview [recipe]="recipeItem"></app-recipe-overview>
+        }
+    }
 </div>
-<p>dashboard works!</p>
