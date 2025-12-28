@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Navbar } from '../../shared/components/navbar/navbar';
 import { RecipeOverview } from '../recipes/recipe-overview/recipe-overview';
-import { RecipeService } from '../../shared/services/cookbook/recipe';
+import { RecipeService } from '../../shared/services/cookbook/recipe.service';
 import { RecipeModel } from '../../shared/models/recipe.model.model';
 import { CommonModule } from '@angular/common';
 

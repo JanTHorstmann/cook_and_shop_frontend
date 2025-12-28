@@ -2,7 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Forms } from '../../shared/components/forms/forms';
-import { LoginService } from '../../shared/services/auth/login';
+import { LoginService } from '../../shared/services/auth/login.service';
+import { LoginTokenService } from '../../shared/services/token/login-token.service';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,10 @@ export class Login {
   loading = false;
   serverError: string | null = null;
 
-  constructor(private loginService: LoginService) { }
+  constructor(
+    private loginService: LoginService,
+    private loginTokenService: LoginTokenService,
+  ) { }
 
   signIn(data: { email: string; password: string }) {
     this.loading = true;
@@ -27,7 +31,7 @@ export class Login {
 
     this.loginService.login(data).subscribe({
       next: (res) => {
-        this.loginService.saveToken(res.access);
+        this.loginTokenService.saveToken(res.access);
         this.loading = false;
         console.log('Login successful');
       },
