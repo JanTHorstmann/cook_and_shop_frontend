@@ -8,7 +8,7 @@ import { environment } from '../../../../../environments/environment'
 export class LoginService {
   constructor(
     private http: HttpClient,
-  ) {}
+  ) { }
 
 
 
@@ -16,8 +16,16 @@ export class LoginService {
     return this.http.post<any>(environment.logInUrl, data);
   }
 
+  isLoggedIn(): boolean {
+    return !!this.getToken();
+  }
+
   saveToken(token: string) {
     localStorage.setItem('access_token', token);
+  }
+
+  getToken(): string | null {
+    return localStorage.getItem('access_token');
   }
 
   logout() {
