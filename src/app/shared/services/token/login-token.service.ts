@@ -29,6 +29,7 @@ export class LoginTokenService {
   removeToken(): void {
     if (this.isBrowser()) {
       localStorage.removeItem(this.ACCESS_TOKEN_KEY);
+      localStorage.removeItem(this.REFRESH_TOKEN_KEY);
     }
   }
 

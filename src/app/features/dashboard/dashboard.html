@@ -1,12 +1,12 @@
 <app-navbar></app-navbar>
 <div class="content">
-    @if (loading) {
+    @if (loading()) {
         <div>Loading...</div>
-    } @else if (error) {
-        <div>{{ error }}</div>
+    } @else if (error()) {
+        <div>{{ error() }}</div>
     } @else {
-        @for (recipeItem of recipeOverviewData; track $index) {
-            <app-recipe-overview [recipe]="recipeItem"></app-recipe-overview>
+        @for (recipe of recipes(); track recipe.id) {
+            <app-recipe-overview [recipe]="recipe"></app-recipe-overview>
         }
     }
 </div>

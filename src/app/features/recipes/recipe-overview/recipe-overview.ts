@@ -1,4 +1,4 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RecipeModel } from '../../../shared/models/recipe.model.model';
 
 @Component({
@@ -8,6 +8,6 @@ import { RecipeModel } from '../../../shared/models/recipe.model.model';
   styleUrl: './recipe-overview.scss',
 })
 export class RecipeOverview {
-  @Input() recipe!: RecipeModel;
+  @Input({ required: true }) recipe!: RecipeModel;
 
 }

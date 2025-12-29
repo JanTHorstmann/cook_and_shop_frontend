@@ -2,6 +2,7 @@ import { HttpClient, HttpInterceptorFn } from '@angular/common/http';
 import { LoginTokenService } from '../token/login-token.service';
 import { inject } from '@angular/core';
 import { catchError, switchMap, throwError } from 'rxjs';
+import { environment } from '../../../../../environments/environment'
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const tokenService = inject(LoginTokenService);
@@ -34,7 +35,7 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
           return throwError(() => error);
         }
 
-        return http.post<any>('/api/token/refresh/', {
+        return http.post<any>(environment.tokenRefreshUrl, {
           refresh: refreshToken,
         }).pipe(
           switchMap((res) => {
