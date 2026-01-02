@@ -1,11 +1,32 @@
 @use '../../../mixins.scss' as m;
 
 .content {
-   height: calc(100lvh - 108px);
+    height: calc(100lvh - 108px);
 }
 
-app-recipe-overview{
+h2 {
+    font-size: 30px;
+    padding: 20px 0 0 50px;
+    margin: 0;
+}
+
+app-recipe-overview {
     @include m.d-flex-justify-align();
     width: 100%;
     padding: 20px 0;
+}
+
+app-recipe-detail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    @include m.d-flex-justify-align();
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+app-filterbar {
+    display: flex;
+    gap: 10px;
 }

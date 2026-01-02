@@ -6,8 +6,9 @@ export interface RecipeModel {
     instructions: string;
     preparation_time: number;
     difficulty: string;
+    category: string;
     author: string;
-    ingredients: RecipeIngredientModel;
+    ingredients: RecipeIngredientModel[];
     recipe_img: string | null;
 }
 

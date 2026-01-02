@@ -1,12 +1,26 @@
 <app-navbar></app-navbar>
+<app-filterbar></app-filterbar>
 <div class="content">
     @if (loading()) {
         <div>Loading...</div>
     } @else if (error()) {
         <div>{{ error() }}</div>
     } @else {
-        @for (recipe of recipes(); track recipe.id) {
-            <app-recipe-overview [recipe]="recipe"></app-recipe-overview>
+        @for (category of ['breakfast','lunch','dinner','snacks']; track category) {
+
+            @if (groupedRecipes()[category].length > 0) {
+                <h2>{{ category[0].toUpperCase() + category.slice(1).toLowerCase() }}</h2>
+
+                @for (recipe of groupedRecipes()[category]; track recipe.id) {
+                    <app-recipe-overview
+                        [recipe]="recipe"
+                        (click)="recipeService.showRecipeDetail(recipe)">
+                    </app-recipe-overview>
+                }
+            }
         }
     }
 </div>
+    @if (showDetail() && recipeDetail()) {
+        <app-recipe-detail [recipeDetail]="recipeDetail()!"></app-recipe-detail>
+    }

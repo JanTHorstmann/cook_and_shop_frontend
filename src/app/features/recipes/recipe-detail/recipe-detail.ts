@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { RecipeModel } from '../../../shared/models/recipe.model.model';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -7,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './recipe-detail.scss',
 })
 export class RecipeDetail {
+  @Input({ required: true }) recipeDetail!: RecipeModel;
 
+  ngOnInit() {
+    console.log('recipeDetail', this.recipeDetail);
+    
+  }
 }

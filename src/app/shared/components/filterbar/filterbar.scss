@@ -1,0 +1,6 @@
+@use '../../../../mixins.scss' as m;
+
+.filter_selction {
+    @include m.d-flex-justify-align($align: left);
+    flex-direction: column;
+}

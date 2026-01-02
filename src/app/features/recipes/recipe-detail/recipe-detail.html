@@ -1,1 +1,35 @@
-<p>recipe-detail works!</p>
+@if (recipeDetail) {
+<div class="recipe_card">
+    <div class="recipe_overview">
+        <div class="recipe_info">
+            <h2>{{ recipeDetail.name }}</h2>
+            <table>
+                <tr>
+                    <th>Zutat</th>
+                    <th>Menge</th>
+                </tr>
+                @if (recipeDetail && recipeDetail.ingredients.length) {
+                @for (ingredient of recipeDetail.ingredients; track ingredient.id) {
+                <tr>
+                    <td>{{ ingredient.ingredient }}</td>
+                    <td>{{ ingredient.amount }} {{ ingredient.unit }}</td>
+                </tr>
+                }    
+            }            
+            </table>
+        </div>
+        <div class="recipe_img">
+            @if (recipeDetail.recipe_img != null) {
+            <img [src]="recipeDetail.recipe_img" alt="">
+            } @else {
+            <img src="assets/images/no_picture_available.png" alt="">
+            }
+        </div>
+    </div>
+    <div class="recipe_meta">
+        <p><img src="assets/images/difficult.png" alt=""> {{ recipeDetail.difficulty }}</p>
+        <p><img src="assets/images/preparation_time.png" alt="">{{ recipeDetail.preparation_time }} min</p>
+    </div>
+    <p class="description">{{ recipeDetail.instructions }}</p>
+</div>
+}

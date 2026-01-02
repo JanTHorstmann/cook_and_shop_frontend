@@ -2,7 +2,7 @@ import { IngredientModel } from "./ingredient.model.model";
 
 export interface RecipeIngredientModel {
     id: number;
-    name: IngredientModel;
+    ingredient: string;
     amount: number;
     unit: string
 }
