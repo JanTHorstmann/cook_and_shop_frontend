@@ -1,52 +1,55 @@
 @use '../../../../mixins.scss' as m;
 
 .filter_selction {
-    @include m.d-flex-justify-align($align: left);
+    @include m.d-flex-justify-align($align: flex-start);
     flex-direction: column;
+    gap: 5px;
 
     select,
     ::picker(select) {
         appearance: base-select;
     }
 
-    * {
-        box-sizing: border-box;
-    }
+    // * {
+    //     box-sizing: border-box;
+    // }
 
-    html {
-        font-family: "Helvetica", "Arial", sans-serif;
-    }
+    // html {
+    //     font-family: "Helvetica", "Arial", sans-serif;
+    // }
 
-    body {
-        width: 100%;
-        padding: 0 10px;
-        max-width: 480px;
-        margin: 0 auto;
-    }
+    // body {
+    //     width: 100%;
+    //     padding: 0 10px;
+    //     max-width: 480px;
+    //     margin: 0 auto;
+    // }
 
-    h2 {
-        font-size: 1.2rem;
-    }
+    // h2 {
+    //     font-size: 1.2rem;
+    // }
 
-    p {
-        display: flex;
-        gap: 10px;
-    }
+    // p {
+    //     display: flex;
+    //     gap: 10px;
+    // }
 
     label {
-        width: fit-content;
-        align-self: center;
+        // width: fit-content;
+        padding-left: 5px;
     }
 
-    select {
-        flex: 1;
-    }
+    // select {
+    //     flex: 1;
+    // }
 
     select {
         border: none;
         background: rgb(64, 128, 128);
         padding: 10px;
         transition: 0.4s;
+        max-width: 150px;
+        min-width: 150px;
     }
 
     select:hover,
@@ -100,7 +103,7 @@
 
     option:hover,
     option:focus {
-        background: plum;
+        background: rgba(64, 200, 200);
     }
 
     option .icon {
@@ -140,5 +143,25 @@
     ::picker(select) {
         top: calc(anchor(bottom) + 1px);
         left: anchor(10%);
+    }
+
+    input {
+        border: none;
+        border-radius: 10px;
+        background: rgb(64, 128, 128);
+        padding: 10px;
+        transition: 0.4s;
+        color: white;
+        max-width: 130px;
+        min-width: 130px;
+        height: 20px;
+    }
+
+    input::placeholder {
+        color: white;
+        font-size: 16px;
+    }
+    input:focus-visible {
+        outline: none;
     }
 }

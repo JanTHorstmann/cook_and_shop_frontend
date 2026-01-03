@@ -13,13 +13,16 @@ export class Filterbar {
 
   selectCategory(event: Event) {
     const value = (event.target as HTMLSelectElement).value;
-    console.log('Selected category:', value);
     this.recipeService.setCategory(value);
   }
 
-    selectDifficulty(event: Event) {
+  selectDifficulty(event: Event) {
     const value = (event.target as HTMLSelectElement).value;
-    console.log('Selected category:', value);
     this.recipeService.setDifficult(value);
+  }
+
+  selectPreparationTime(event: Event) {
+    const value = (event.target as HTMLSelectElement).value;
+    this.recipeService.setPreparationTime(value)
   }
 }

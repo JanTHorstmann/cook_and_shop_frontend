@@ -104,4 +104,8 @@ export class RecipeService {
     setDifficult(difficult: any) {
     this.selectedDifficulty.set(difficult);
   }
+
+  setPreparationTime(time: any) {
+    this.maxPreparationTime.set(time);
+  }
 }

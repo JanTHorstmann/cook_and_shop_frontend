@@ -18,3 +18,8 @@
         <option value="hard">Hard</option>
     </select>
 </div>
+
+<div  class="filter_selction">
+    <label for="difficult">Choose a time</label>
+    <input  name="preparation_time" id="preparation_time" type="number" min="1" placeholder="Time in Minutes" (input)="selectPreparationTime($event)">
+</div>
