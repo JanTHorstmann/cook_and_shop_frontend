@@ -1,6 +1,6 @@
 <div class="filter_selction">
     <label for="category">Choose a category</label>
-    <select name="category" id="category">
+    <select name="category" id="category" (change)="selectCategory($event)">
         <option value="all">All</option>
         <option value="breakfast">Breakfast</option>
         <option value="lunch">Lunch</option>
@@ -11,7 +11,7 @@
 
 <div  class="filter_selction">
     <label for="difficult">Choose a difficulty</label>
-    <select name="difficult" id="difficult">
+    <select name="difficult" id="difficult" (change)="selectDifficulty($event)">
         <option value="all">All</option>
         <option value="easy">Easy</option>
         <option value="medium">Medium</option>

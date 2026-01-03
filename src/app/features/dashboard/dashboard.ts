@@ -41,9 +41,6 @@ export class Dashboard {
     this.recipeService.selectedCategory.set('all');
   }
 
-
-
-
   showRecipeDetail(recipe: RecipeModel) {
     this.recipeService.showRecipeDetail(recipe)
   }

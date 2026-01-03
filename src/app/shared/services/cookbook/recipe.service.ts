@@ -96,4 +96,12 @@ export class RecipeService {
     this.recipeDetail.set(null);
     this.showDetail.set(false);
   }
+
+    setCategory(category: any) {
+    this.selectedCategory.set(category);
+  }
+
+    setDifficult(difficult: any) {
+    this.selectedDifficulty.set(difficult);
+  }
 }

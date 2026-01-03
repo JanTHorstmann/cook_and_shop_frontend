@@ -4,7 +4,7 @@
     @if (loading()) {
         <div>Loading...</div>
     } @else if (error()) {
-        <div>{{ error() }}</div>
+        <div class="error">{{ error() }}</div>
     } @else {
         @for (category of ['breakfast','lunch','dinner','snacks']; track category) {
 

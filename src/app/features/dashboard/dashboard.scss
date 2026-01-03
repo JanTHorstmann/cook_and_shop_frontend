@@ -10,6 +10,12 @@ h2 {
     margin: 0;
 }
 
+.error {
+    margin: 40px 60px;
+    font-size: 32px;
+    color: red;
+}
+
 app-recipe-overview {
     @include m.d-flex-justify-align();
     width: 100%;
@@ -29,4 +35,5 @@ app-recipe-detail {
 app-filterbar {
     display: flex;
     gap: 10px;
+    padding: 20px 0 0 50px;
 }
