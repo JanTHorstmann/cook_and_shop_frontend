@@ -22,7 +22,13 @@ export class Filterbar {
   }
 
   selectPreparationTime(event: Event) {
-    const value = (event.target as HTMLSelectElement).value;
-    this.recipeService.setPreparationTime(value)
+    const raw = (event.target as HTMLInputElement).value;
+    let value
+    if (raw == "") {
+      value = null;
+    } else {
+      value = Number(raw);
+    }
+    this.recipeService.setPreparationTime(value);
   }
 }
